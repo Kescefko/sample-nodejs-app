@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: app-gyorgy-nodejs-dev-pc
+  AZURE_WEBAPP_NAME: 'app-gyorgy-nodejs-dev-pc'
   AZURE_WEBAPP_PACKAGE_PATH: '.'
   NODE_VERSION: '20.x'
 
@@ -26,7 +26,7 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm test --if-present || echo "Skipping tests
+          npm test --if-present || echo "Skipping tests"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
